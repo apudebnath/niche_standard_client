@@ -17,7 +17,7 @@ const AddAProduct = () => {
         e.preventDefault();
         const productData = {...product};
 
-            fetch('http://localhost:5000/products', {
+            fetch('https://damp-waters-43374.herokuapp.com/products', {
                 method:'POST',
                 headers:{
                     'content-type': 'application/json'
@@ -66,7 +66,7 @@ const AddAProduct = () => {
                             id="standard-basic" 
                             label="Product Image url"
                             name="image"
-                            type="text"
+                            type="url"
                             onBlur={handleOnBlur} 
                             variant="standard" 
                             />

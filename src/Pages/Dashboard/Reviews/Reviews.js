@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Container, Grid, Rating, TextField, Typography } from '@mui/material';
+import { Button, CircularProgress, Grid, Rating, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
@@ -23,7 +23,7 @@ const Reviews = () => {
             name:user.displayName,
         };
 console.log(reviewData);
-            fetch('http://localhost:5000/reviews', {
+            fetch('https://damp-waters-43374.herokuapp.com/reviews', {
                 method:'POST',
                 headers:{
                     'content-type': 'application/json'

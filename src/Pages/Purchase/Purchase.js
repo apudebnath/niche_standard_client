@@ -24,7 +24,7 @@ const Purchase = () => {
             status: 'Pending',
         }
         // Send Data to Database
-        fetch('http://localhost:5000/orders',{
+        fetch('https://damp-waters-43374.herokuapp.com/orders',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

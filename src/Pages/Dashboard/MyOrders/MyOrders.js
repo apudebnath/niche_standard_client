@@ -30,20 +30,20 @@ const MyOrders = () => {
 
 // Show My Orders
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`
+        const url = `https://damp-waters-43374.herokuapp.com/orders?email=${user.email}`
         fetch(url)
         .then(res => res.json())
         .then(data => {
             setOrders(data)
         })
-    }, [])
+    }, [user?.email])
 
 // Delete Orders
 
     const handleDeleteOrder = id => {
         const proceed = window.confirm("Are you SURE! you want to DELETE this Order?")
         if(proceed){
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://damp-waters-43374.herokuapp.com/deleteOrder/${id}`, {
                 method: 'DELETE',
             })
             .then(res => res.json())

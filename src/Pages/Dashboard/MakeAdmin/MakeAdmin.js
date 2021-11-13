@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     const handleAdminSubmit = e => {
         e.preventDefault();
         const user = {email};
-        const url = 'http://localhost:5000/users/admin';
+        const url = 'https://damp-waters-43374.herokuapp.com/users/admin';
         fetch(url, {
             method: 'PUT',
             headers: {

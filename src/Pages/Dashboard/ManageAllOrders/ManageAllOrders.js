@@ -48,7 +48,7 @@ const ManageAllOrders = () => {
     }
 // Show all orders
     useEffect(() => {
-        const url = 'http://localhost:5000/allOrders'
+        const url = 'https://damp-waters-43374.herokuapp.com/allOrders'
         fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -57,7 +57,7 @@ const ManageAllOrders = () => {
     }, [])
 // Update Status
     const handleUpdateChange = (id) => {
-       fetch(`http://localhost:5000/statusUpdate/${id}`, {      
+       fetch(`https://damp-waters-43374.herokuapp.com/statusUpdate/${id}`, {      
            method: 'PUT',
            headers: {
                'content-type': 'application/json'
@@ -76,7 +76,7 @@ const ManageAllOrders = () => {
     const handleDeleteOrder = id => {
         const proceed = window.confirm("Are you SURE! you want to DELETE this Order?")
         if(proceed){
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://damp-waters-43374.herokuapp.com/deleteOrder/${id}`, {
             method: 'DELETE',
             })
             .then(res => res.json())
