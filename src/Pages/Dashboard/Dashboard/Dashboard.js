@@ -26,6 +26,8 @@ import useAuth from '../../../Hooks/useAuth';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddAProduct from '../AddAProduct/AddAProduct';
+import Welcome from '../Welcome/Welcome';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 const drawerWidth = 250;
 
@@ -45,13 +47,14 @@ function Dashboard(props) {
             <Divider />
             <List>
                 <Divider />
+                    <ListItem button>
+                      <Link to={`${url}`} style={{textDecoration: 'none'}}>Welcome</Link>
+                    </ListItem>
+                    <Divider />
                 {!admin && <Box>
                     <ListItem button>
                       <Link to={`${url}/myOrders`} style={{textDecoration: 'none'}}>My Orders</Link>
                     </ListItem>
-                    {/* <ListItem button>
-                      <Link to={url} style={{textDecoration: 'none'}}>My Orders</Link>
-                    </ListItem> */}
                 <Divider />
                 <ListItem button>
                     <Link to={`${url}/reviews`} style={{textDecoration: 'none'}}>Reviews</Link>
@@ -157,8 +160,11 @@ function Dashboard(props) {
             <Container>
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={2}>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} sm={12} md={12}>
                               <Switch>
+                                <Route exact path={path}>
+                                  <Welcome></Welcome>
+                                </Route>
                                 <Route path={`${path}/myOrders`}>
                                   <MyOrders></MyOrders>
                                 </Route>
@@ -168,18 +174,18 @@ function Dashboard(props) {
                                 <Route path={`${path}/pay`}>
                                   <Pay></Pay>
                                 </Route>
-                                <Route path={`${path}/manageAllOrders`}>
+                                <AdminRoute path={`${path}/manageAllOrders`}>
                                   <ManageAllOrders></ManageAllOrders>
-                                </Route>
-                                <Route path={`${path}/manageProducts`}>
+                                </AdminRoute>
+                                <AdminRoute path={`${path}/manageProducts`}>
                                   <ManageProducts></ManageProducts>
-                                </Route>
-                                <Route path={`${path}/makeAdmin`}>
+                                </AdminRoute>
+                                <AdminRoute path={`${path}/makeAdmin`}>
                                   <MakeAdmin></MakeAdmin>
-                                </Route>
-                                <Route path={`${path}/addAProduct`}>
+                                </AdminRoute>
+                                <AdminRoute path={`${path}/addAProduct`}>
                                   <AddAProduct></AddAProduct>
-                                </Route>
+                                </AdminRoute>
                               </Switch>  
                         </Grid>
                     </Grid>

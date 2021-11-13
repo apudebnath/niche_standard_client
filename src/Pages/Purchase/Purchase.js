@@ -14,7 +14,6 @@ const Purchase = () => {
         const value = e.target.value;
         const newOrder = {...orderInfo}
         newOrder[field] = value;
-        console.log(newOrder)
         setOrderInfo(newOrder);
     }
     const handlePurchaseSubmit = e => {
@@ -35,9 +34,8 @@ const Purchase = () => {
         .then(res => res.json())
         .then(data => {
             if(data.insertedId){
-                alert('Order submit successfully.')
+                alert('Congratulations, You submit order successfully.')
             }
-            console.log(data);
         })
         e.target.reset();
     }

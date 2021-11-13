@@ -41,17 +41,20 @@ const MyOrders = () => {
 // Delete Orders
 
     const handleDeleteOrder = id => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
-            method: 'DELETE',
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data.deletedCount > 0){
-                alert('Order Delete Successfully.')
-                const restOfOrders = orders.filter(order => order._id !== id)
-                setOrders(restOfOrders);
-            }
-        })
+        const proceed = window.confirm("Are you SURE! you want to DELETE this Order?")
+        if(proceed){
+            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+                method: 'DELETE',
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.deletedCount > 0){
+                    alert('Order Delete Successfully.')
+                    const restOfOrders = orders.filter(order => order._id !== id)
+                    setOrders(restOfOrders);
+                }
+            })
+        }
     }
 
     return (
