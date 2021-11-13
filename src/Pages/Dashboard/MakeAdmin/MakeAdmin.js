@@ -31,9 +31,9 @@ const MakeAdmin = () => {
         e.target.reset();
     }
     return (
-        <Container>
+        <Container sx={{my: 8}}>
             <h2>Make Admin</h2>
-            <Box sx={{ flexGrow: 1 , my: 8}}>
+            <Box sx={{ flexGrow: 1 , py: 10}}>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <form onSubmit={handleAdminSubmit}>
@@ -44,7 +44,7 @@ const MakeAdmin = () => {
                                variant="standard"
                                onBlur={handleOnBlur}
                             ></TextField>
-                            <Button type="submit" variant="contained">Make Admin</Button>
+                            <Button sx={{background: '#17252A'}} type="submit" variant="contained">Make Admin</Button>
                         </form>
                     </Grid>
                 </Grid>

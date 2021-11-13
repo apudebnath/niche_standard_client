@@ -33,7 +33,7 @@ const TopBanner = () => {
                      <Box style={{textAlign: 'left'}}>
                         <Typography variant="h2" style={{textAlign: 'left'}}>Welcome to the Ancient Pottery for the Arts</Typography>
                         <Typography variant="h6" style={{textAlign: 'left', color: '#2B7A78'}}>The Center celebrates the life and work of Antique collection presenting exhibitions, performances, and educational opportunities.</Typography>
-                        <NavLink  to="/purchase" style={{textDecoration: "none",}}>
+                        <NavLink  to="/exploreproducts" style={{textDecoration: "none",}}>
                             <Button className={exploreButton} >EXPLORE</Button>
                         </NavLink>
                      </Box>

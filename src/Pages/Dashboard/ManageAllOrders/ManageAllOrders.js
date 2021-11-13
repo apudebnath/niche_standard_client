@@ -14,25 +14,25 @@ import TextField from '@mui/material/TextField';
 
 const useStyle = makeStyles({
     button: {
-        color: 'white',
-        background: 'red',
-        border: '1px solid red',
+        color: 'white!important',
+        background: 'red!important',
+        border: '1px solid red!important',
         '&:hover': {
-            background: '#fff',
-            border: '1px solid red',
-            color: 'red'
+            background: '#fff!important',
+            border: '1px solid red!important',
+            color: 'red!important'
         }
     }
 })
 const useButtonStyle = makeStyles({
     pendingButton: {
-        color: 'white',
-        background: 'gray',
-        border: '1px solid cyan',
+        color: 'white!important',
+        background: 'gray!important',
+        border: '1px solid cyan!important',
         '&:hover': {
-            background: '#fff',
-            border: '1px solid cyan',
-            color: 'green'
+            background: '#fff!important',
+            border: '1px solid cyan!important',
+            color: 'green!important'
         }
     }
 })
@@ -91,7 +91,7 @@ const ManageAllOrders = () => {
     }
 
     return (
-        <Container>
+        <Container sx={{mb:8}}>
             <h2>Manage all Orders</h2>
             <TableContainer component={Paper}>
                 <Table sx={{border:'1px solid cyan'}} aria-label="simple table">

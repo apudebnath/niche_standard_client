@@ -10,8 +10,6 @@ const Home = () => {
             <Products></Products>
             <ShowReviews></ShowReviews>
             <Contact></Contact>
-            
-            
         </div>
     );
 };

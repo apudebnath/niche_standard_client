@@ -7,18 +7,19 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Button } from '@mui/material';
+import { Button, Container, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { Box } from '@mui/system';
 
 const useStyle = makeStyles({
     button: {
-        color: 'white',
-        background: 'red',
-        border: '1px solid red',
+        color: 'white!important',
+        background: 'red!important',
+        border: '1px solid red!important',
         '&:hover': {
-            background: '#fff',
-            border: '1px solid red',
-            color: 'red'
+            background: '#fff!important',
+            border: '1px solid red!important',
+            color: 'red!important'
         }
     }
 })
@@ -58,40 +59,42 @@ const MyOrders = () => {
     }
 
     return (
-        <div>
-            <h2>My Orders</h2>
-            <TableContainer component={Paper}>
-                <Table sx={{border:'1px solid cyan'}} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Name</TableCell>
-                            <TableCell align="right">Email</TableCell>
-                            <TableCell align="right">Phone</TableCell>
-                            <TableCell align="right">Price</TableCell>
-                            <TableCell align="right">Status</TableCell>
-                            <TableCell align="right">Action</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {orders.map((row) => (
-                        <TableRow
-                          key={row._id}
-                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        >
-                            <TableCell component="th" scope="row">
-                              {row.userName}
-                            </TableCell>
-                            <TableCell align="right">{row.email}</TableCell>
-                            <TableCell align="right">{row.phone}</TableCell>
-                            <TableCell align="right">{row.price}</TableCell>
-                            <TableCell align="right">{row.status}</TableCell>
-                            <TableCell align="right"><Button onClick={() => handleDeleteOrder(row._id)} className={button}>Delete</Button></TableCell>
-                        </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
+        <Container sx={{my:8}}>
+            <Box sx={{pb:8}}>
+               <Typography variant="h4" sx={{py:3}}>My Orders</Typography>
+                <TableContainer component={Paper}>
+                    <Table sx={{border:'1px solid cyan',}} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Name</TableCell>
+                                <TableCell align="right">Email</TableCell>
+                                <TableCell align="right">Phone</TableCell>
+                                <TableCell align="right">Price</TableCell>
+                                <TableCell align="right">Status</TableCell>
+                                <TableCell align="right">Action</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {orders.map((row) => (
+                            <TableRow
+                              key={row._id}
+                              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                            >
+                                <TableCell component="th" scope="row">
+                                  {row.userName}
+                                </TableCell>
+                                <TableCell align="right">{row.email}</TableCell>
+                                <TableCell align="right">{row.phone}</TableCell>
+                                <TableCell align="right">{row.price}</TableCell>
+                                <TableCell align="right">{row.status}</TableCell>
+                                <TableCell align="right"><Button onClick={() => handleDeleteOrder(row._id)} className={button}>Delete</Button></TableCell>
+                            </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Box>
+        </Container>
     );
 };
 

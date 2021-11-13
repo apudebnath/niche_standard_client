@@ -102,6 +102,8 @@ function Dashboard(props) {
           sx={{
             width: { sm: `calc(100% - ${drawerWidth}px)` },
             ml: { sm: `${drawerWidth}px` },
+            background: '#3AAFA9',
+            py: 3
           }}
         >
             <Toolbar>

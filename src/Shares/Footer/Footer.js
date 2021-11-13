@@ -33,7 +33,7 @@ function Footer() {
         <Box sx={{background: '#DEF2F1'}}>
             <Container >
                 <Box sx={{ flexGrow: 1 }}>
-                    <Grid container spacing={3} sx={{ my: 5 }}>
+                    <Grid container spacing={3} sx={{ mb: 5 }}>
                         <Grid item xs={12} sm={12} md={3}>
                             <List sx={{ mt: 4 }}>
                             <img className={logoStyle} src={logo} alt="" />

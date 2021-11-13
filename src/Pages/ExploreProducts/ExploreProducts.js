@@ -29,10 +29,10 @@ const {buyButton} = useStyle();
         .then(data => setItems(data))
     }, [])
     return (
-        <Container sx={{my:8}}>
-            <Typography variant="h4" sx={{py:5}}>The Ancient Pottery Products</Typography>
+        <Container sx={{mt:5, mb:8}}>
+            <Typography variant="h4" sx={{pt:5, pb:8}}>The Ancient Pottery Products</Typography>
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={2}>
+                <Grid container spacing={2} sx={{pb:5}}>
                     {
                         items.slice(0,10).map(product => <Grid item xs={12} sm={6} md={4} 
                             key={product.title}>

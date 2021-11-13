@@ -44,10 +44,10 @@ console.log(reviewData);
     return (
         <>
             <Typography variant="h5" component="legend">Review</Typography>
-            <Box sx={{ flexGrow: 1, mt:5 }}>
+            <Box sx={{ flexGrow: 1, my:5 }}>
                 <Grid container spacing={2}>
-                    <Grid item xs={12} sm={12} md={12} >
-                        <form onSubmit={handleProductSubmit}>
+                    <Grid item xs={12} sm={12} md={12} sx={{mb:5}}>
+                        <form onSubmit={handleProductSubmit} >
                             <TextField
                             sx={{width: '55%', mb:1}} 
                             id="standard-basic" 
@@ -75,7 +75,7 @@ console.log(reviewData);
                                   setValue(newValue);
                                 }}
                             /> 
-                            <Button sx={{width: '55%', m: 1}} variant="contained" type="submit">Review Product</Button>
+                            <Button sx={{width: '55%', m: 1, background: '#17252A'}} variant="contained" type="submit">Review Product</Button>
                         </form>
                     </Grid>
                 </Grid>

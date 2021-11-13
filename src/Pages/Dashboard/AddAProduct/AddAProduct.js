@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Grid, TextField } from '@mui/material';
+import { Button, CircularProgress, Container, Grid, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
@@ -36,7 +36,7 @@ const AddAProduct = () => {
         }
     }
     return (
-        <div>
+        <Container sx={{mb: 8}}>
             <h2>Add  a  Product</h2>
             
             <Box sx={{ flexGrow: 1, mt:5 }}>
@@ -88,12 +88,12 @@ const AddAProduct = () => {
                             onBlur={handleOnBlur} 
                             variant="standard" 
                             />
-                            <Button sx={{width: '55%', m: 1}} variant="contained" type="submit">Add Product</Button>
+                            <Button sx={{width: '55%', m: 1, background: '#17252A'}} variant="contained" type="submit">Add Product</Button>
                         </form>
                     </Grid>
                 </Grid>
             </Box>
-        </div>
+        </Container>
     );
 };
 
