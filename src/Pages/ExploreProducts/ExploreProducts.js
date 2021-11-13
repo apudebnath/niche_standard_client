@@ -34,7 +34,7 @@ const {buyButton} = useStyle();
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2} sx={{pb:5}}>
                     {
-                        items.slice(0,10).map(product => <Grid item xs={12} sm={6} md={4} 
+                        items.slice(0,12).map(product => <Grid item xs={12} sm={6} md={4} 
                             key={product.title}>
                                 
                             <Paper elevation={3} sx={{pb:3}}>
