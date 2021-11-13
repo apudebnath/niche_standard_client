@@ -30,7 +30,7 @@ const {buyButton} = useStyle();
     }, [])
     return (
         <Container sx={{mt:5, mb:8}}>
-            <Typography variant="h4" sx={{pt:5, pb:8}}>The Ancient Pottery Products</Typography>
+            <Typography variant="h4" sx={{pt:5, pb:8}}>The Ancient Pottery</Typography>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2} sx={{pb:5}}>
                     {
