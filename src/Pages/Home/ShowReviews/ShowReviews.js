@@ -10,7 +10,7 @@ const ShowReviews = () => {
         .then(res => res.json())
         .then(data => setReviews(data))
     }, [])
-    console.log(reviews);
+
     return (
         <Container sx={{my: '60px'}}>
             <Typography variant="h4" sx={{pb:'30px'}}>Show Reviews</Typography>
@@ -23,7 +23,6 @@ const ShowReviews = () => {
                                     {review.review}
                                 </Typography>
                                 <Rating
-                                sx={{}} 
                                 name="read-only"
                                 value={review.value}
                                 /> 

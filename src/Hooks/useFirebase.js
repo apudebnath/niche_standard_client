@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import initAuthentication from "../Pages/Firebase/Firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, getIdToken, signOut } from "firebase/auth";
 
 initAuthentication();
 
@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [loading, setLoading] = useState(true);
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState();
+    const [token, setToken] = useState('')
 
 
     const auth = getAuth();
@@ -62,7 +63,10 @@ const useFirebase = () => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
              setUser(user);
-
+             getIdToken(user)
+             .then(idToken => {
+                setToken(idToken)
+             })
             } else {
                 setUser({})
             }
@@ -110,6 +114,7 @@ const useFirebase = () => {
     return {
         user,
         admin,
+        token,
         loading,
         authError,
         registerUserWithEmail,
