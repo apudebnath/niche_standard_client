@@ -54,4 +54,5 @@ const MakeAdmin = () => {
     );
 };
 
+
 export default MakeAdmin;
